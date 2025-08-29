@@ -133,7 +133,24 @@ html, body {
 /* Button positioning overrides */
 #noButton {
   position: fixed;
-  transition: 0.5s;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  cursor: pointer;
+  text-shadow: 0 0 1px #fff, 0 0 5px #aaa;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#noButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 #yesButton {
@@ -170,6 +187,7 @@ html, body {
     font-size: 14px;
   }
 }
+
 
 
 
