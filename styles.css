@@ -77,7 +77,7 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: 0;
+    margin-top: 10px;
     padding-top: 20px;
     margin-bottom: 51px;
     position: relative;
@@ -178,6 +178,7 @@ body {
         font-size: 14px;
     }
 }
+
 
 
 
