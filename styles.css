@@ -1,5 +1,5 @@
 /* Base layout */
-body {
+html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +9,7 @@ body {
   padding: 0;
   background-image: linear-gradient(to bottom, #2c2c46, #313163, #685db1);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Star layers */
@@ -169,3 +170,4 @@ body {
     font-size: 14px;
   }
 }
+
