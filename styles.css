@@ -132,7 +132,10 @@ html, body {
 
 /* Button positioning overrides */
 #noButton {
-  position: relative;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
   transition: 0.5s;
 }
 
@@ -170,4 +173,5 @@ html, body {
     font-size: 14px;
   }
 }
+
 
