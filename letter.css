@@ -54,7 +54,7 @@ body {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.3s ease;
-  margin-left: 196px;
+  margin-left: 198px;
 }
 
 .continue-btn:hover {
@@ -65,4 +65,5 @@ body {
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
 
