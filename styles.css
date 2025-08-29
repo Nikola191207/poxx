@@ -1,9 +1,10 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: linear-gradient(to bottom, #2c2c46, #313163, #685db1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #2c2c46, #313163, #685db1);
     
 }
 
@@ -169,4 +170,5 @@ body {
         font-size: 14px;
     }
 }
+
 
