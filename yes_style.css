@@ -43,14 +43,3 @@ body {
     opacity: 0.4;
 }
 
-.yunn {
-    position: absolute;
-    bottom: 20px;
-    right: 70px;
-    width: 100px;
-    height: 300px;
-    z-index: 1;
-    color: white;
-    font-size: 20px;
-    opacity: 0.8;
-}
