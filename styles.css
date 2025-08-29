@@ -11,7 +11,7 @@ body {
 .stars, .stars2, .stars3 {
   position: fixed;
   width: 100%;
-  height: 200px; /* Only top portion of screen */
+  height: 200px; 
   background-repeat: repeat;
   background-position: 0 0;
   background-size: 50px 50px; 
@@ -31,7 +31,7 @@ body {
 
 .line2 {
     position: fixed;
-    top: 721px;
+    top: 748px;
     left: 0;
     width: 100%;
     height: 5px;
@@ -42,7 +42,7 @@ body {
 .stars2 {
   background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjZubTc4Z3VwbXp1OGFlcm9zNXdwcjJzeW15aGJ1b3ZvazEwcDFrayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/X8HopTCcAlKJYqNwvs/giphy.gif');
   animation: moveStars 400s linear infinite;
-  top: 721px;
+  top: 751px;
   opacity: 0.3;
 }
 
@@ -105,7 +105,7 @@ body {
 }
 
 .btn {
-  font-family: 'Segoe UI', sans-serif; /* You can swap this for something more whimsical */
+  font-family: 'Segoe UI', sans-serif; 
   font-size: 20px;
   color: white;
   background-color: transparent;
@@ -119,7 +119,7 @@ body {
 }
 
 .btn:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Soft glow on hover */
+  background-color: rgba(255, 255, 255, 0.1); 
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
