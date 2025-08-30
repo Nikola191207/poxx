@@ -37,27 +37,9 @@
                 </script> 
 
                 <script>
-  document.addEventListener("mousemove", function(e) {
-    const star = document.createElement("div");
-    star.className = "star-trail";
-    star.style.left = e.pageX + "px";
-    star.style.top = (e.pageY + 8) + "px";
-    document.body.appendChild(star);
-    setTimeout(() => star.remove(), 900);
-  });
-</script>
-
-<script>
-  function transitionTo(url) {
-    document.body.classList.add("fade-out");
-    setTimeout(() => {
-      window.location.href = url;
-    }, 1000);
-  }
-</script>
-
             </div>
         </div>
        
     </body> 
 </html>
+
