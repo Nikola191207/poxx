@@ -23,11 +23,13 @@
 
 <script>
   function goToProposal() {
+    // Add fade-out class
     document.body.classList.add("fade-out");
 
+    // Force a repaint before navigating
     setTimeout(() => {
       window.location.href = "universe.html";
-    }, 500); 
+    }, 500); // Short delay to allow transition to start
   }
 
   window.onload = () => {
@@ -48,4 +50,3 @@
   </script>
 </body>
 </html>
-
