@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+  color: white;
+}
+
+#starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.background-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px white, 0 0 12px rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  z-index: 0;
+  animation: twinkle 6s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+#universe {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 8px #fff;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#letterBox {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80px;
+  max-width: 600px;
+  padding: 20px 30px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 20px;
+  font-size: 20px;
+  display: none;
+  z-index: 3;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(255,255,255,0.3);
+  text-align: center;
+  line-height: 1.6;
+}
+
+#continueBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+#continueBtn:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px white;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
