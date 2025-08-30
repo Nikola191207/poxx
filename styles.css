@@ -35,7 +35,7 @@ body {
     top: 748px;
     left: 0;
     width: 100%;
-    height: 5px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
@@ -196,3 +196,4 @@ body.fade-out {
   opacity: 0;
   transition: opacity 1s ease;
 }
+
