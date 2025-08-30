@@ -10,6 +10,7 @@
             <div >
                 <h1 class = "header_text">I promise to be the best boyfriend ever!!</h1>
                 <h1 class = "header_text1">I love you so much Pox 💞</h1>
+                <h1 class="yunn">Yun lol</h1>
             </div>
             <div class="gif_container">
                 <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHBkaXJ0cm91YW5xczB1dXQ2NmE5aHVyODV0N3p0amthNzFnN3Y1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
@@ -18,7 +19,26 @@
         
         <div class="yun">
             <img src="Screenshot_5.png" alt="Cute animated illustration">
+
+            <script>
+  document.addEventListener("mousemove", function(e) {
+    const star = document.createElement("div");
+    star.className = "star-trail";
+    star.style.left = e.pageX + "px";
+    star.style.top = (e.pageY + 8) + "px";
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), 900);
+  });
+</script>
+
+<script>
+  function transitionTo(url) {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1000);
+  }
+</script>
+
     </body> 
 </html>
-
-
