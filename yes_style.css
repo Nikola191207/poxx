@@ -43,3 +43,39 @@ body {
     opacity: 0.4;
 }
 
+.yunn {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    width: 100px;
+    height: 300px;
+    z-index: 1;
+    color: white;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+
+.star-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 4px #9382af, 0 0 8px #dba1e9;
+  pointer-events: none;
+  animation: fadeOut 2s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
