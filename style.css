@@ -21,7 +21,7 @@ body {
   background: white;
   border-radius: 50%;
   opacity: 0;
-  box-shadow: 0 0 6px white, 0 0 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px white, 0 0 12px rgba(255, 255, 255, 0.3);
   pointer-events: none;
   z-index: 0;
   animation: twinkle 6s infinite ease-in-out;
@@ -96,4 +96,3 @@ body.fade-out {
   opacity: 0;
   transition: opacity 1s ease;
 }
-    
