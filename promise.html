@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Promises to You</title>
+  <link rel="stylesheet" href="promise.css">
+</head>
+<body>
+  <div id="starfield"></div>
+
+  <div class="container">
+    <div id="promiseBox1" class="promise-box">I promise we will always be there for each other</div>
+    <div id="promiseBox2" class="promise-box">I promise to always be by your side even when everyone is against you</div>
+    <div id="promiseBox3" class="promise-box">I promise to grow and become the man you dream of.</div>
+
+    <div id="finalMessage" style="display:none;">
+      <p id="typedText" class="final-text"></p>
+      <button class="continue-btn" onclick="goToProposal()">Open?</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = () => {
+      document.body.classList.add("fade-in");
+
+    
+      setTimeout(() => document.getElementById("promiseBox1").classList.add("visible"), 0);
+      setTimeout(() => document.getElementById("promiseBox2").classList.add("visible"), 5000);
+      setTimeout(() => {
+        document.getElementById("promiseBox3").classList.add("visible");
+
+     
+        setTimeout(() => {
+          document.getElementById("finalMessage").style.display = "block";
+          typeText("I have one more question I want to ask you", "typedText", 70);
+        }, 5000);
+      }, 10000);
+
+     
+      const starfield = document.getElementById("starfield");
+      function createStars(count) {
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement("div");
+          star.className = "moving-star";
+          star.style.top = Math.random() * window.innerHeight + "px";
+          star.style.left = Math.random() * window.innerWidth + "px";
+          star.style.animationDelay = `${Math.random() * 5}s`;
+          starfield.appendChild(star);
+        }
+      }
+      createStars(100);
+    };
+
+ function typeText(text, elementId, speed) {
+  const el = document.getElementById(elementId);
+  el.innerHTML = "";
+  let i = 0;
+  const interval = setInterval(() => {
+    el.innerHTML += text.charAt(i);
+    i++;
+    if (i >= text.length) {
+      clearInterval(interval);
+      const btn = document.querySelector(".continue-btn");
+      btn.style.display = "inline-block";
+      setTimeout(() => {
+        btn.style.opacity = "1";
+      }, 50); 
+    }
+  }, speed);
+}
+
+
+    function goToProposal() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "second.html";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

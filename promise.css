@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInBody 1s ease forwards;
+}
+
+#starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.moving-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: moveStar 2s linear infinite;
+}
+
+@keyframes moveStar {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100vw); opacity: 0.3; }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.promise-box {
+  opacity: 0;
+  max-width: 700px;
+  padding: 30px;
+  margin: 30px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  font-size: 24px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transition: opacity 2s ease;
+}
+
+.promise-box.visible {
+  opacity: 1;
+}
+
+#finalMessage {
+  margin-top: 40px;
+}
+
+.final-text {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ccc;
+  font-style: italic;
+  min-height: 30px;
+}
+
+.continue-btn {
+  display: none;
+  opacity: 0;
+  padding: 12px 28px;
+  font-size: 18px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: opacity 4s ease;
+}
+
+
+.continue-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px white;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
+}

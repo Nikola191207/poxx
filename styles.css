@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #1a002d 0%, #000000 100%);
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInBody 1s ease forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px white, 0 0 12px rgba(255,255,255,0.3);
+  animation: twinkle 6s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header_text1, .header_text {
+  background: linear-gradient(90deg, #ff9ff3, #feca57, #54a0ff, #5f27cd, #ff9ff3);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 6s ease infinite;
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.header_text1, .header_text {
+  color: white;
+  text-shadow: 0 0 10px #ff9ff3, 0 0 20px #ff9ff3, 0 0 30px #ff9ff3;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #ff9ff3, 0 0 20px #ff9ff3, 0 0 30px #ff9ff3;
+  }
+  50% {
+    text-shadow: 0 0 20px #feca57, 0 0 40px #feca57, 0 0 60px #feca57;
+  }
+}
+
+.header_text {
+  overflow: initial;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+.gif_container img {
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  max-height: 400px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; 
+  margin-top: 40px;
+  position: relative;
+}
+
+#yesButton {
+  position: relative; 
+  margin-right: 120px;
+}
+
+#noButton {
+  position: absolute; 
+  left: calc(50% + 100px);
+  transition: left 0.3s ease, top 0.3s ease;
+  margin-left: -40px;
+}
+
+.btn {
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 1px #fff, 0 0 5px #aaa;
+  z-index: 2;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.star-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 4px #9382af, 0 0 8px #dba1e9;
+  pointer-events: none;
+  animation: fadeOut 2s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
+}

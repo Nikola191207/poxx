@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="heart.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="starfield"></div>
+
+  <div class="container">
+    <h1 class="header_text1">Anais </h1>
+    <h1 class="header_text">Will you be my girlfriend? ❤️</h1>
+
+    <div class="gif_container">
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3FwMnlhdG1mZmF5cnlzNHNhcDF6c3RmaG91NHNmaXY5a3B4MjQzeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
+    </div>
+
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">YES! 💞</button>
+      <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No.</button>
+    </div>
+  </div>
+
+  <script>
+    function nextPage() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "yes.html";
+      }, 1000);
+    }
+
+   function moveButton() {
+  const btn = document.getElementById('noButton');
+  const container = document.querySelector('.buttons');
+
+  const maxX = container.clientWidth - btn.offsetWidth;
+  const maxY = container.clientHeight - btn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  btn.style.position = 'absolute';
+  btn.style.left = `${x}px`;
+  btn.style.top = `${y}px`;
+}
+
+
+    // Star trail effect
+    document.addEventListener("mousemove", function(e) {
+      const star = document.createElement("div");
+      star.className = "star-trail";
+      star.style.left = e.pageX + "px";
+      star.style.top = (e.pageY + 8) + "px";
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 900);
+    });
+
+    // Ambient stars
+    window.onload = () => {
+      const starfield = document.getElementById("starfield");
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement("div");
+        star.className = "background-star";
+        star.style.left = Math.random() * window.innerWidth + "px";
+        star.style.top = Math.random() * window.innerHeight + "px";
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        starfield.appendChild(star);
+      }
+    };
+  </script>
+</body>
+</html>

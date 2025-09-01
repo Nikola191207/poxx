@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tell Me What I Need to Hear</title>
+  <link rel="stylesheet" href="truth.css">
+</head>
+<body>
+  <div id="starfield"></div>
+
+  <div class="container">
+    <h1 class="prompt">I know there's a lot of flaws and mistakes in me, please tell me what things you dislike in me</h1>
+    <textarea id="flawInput" placeholder="Write here cutie <3"></textarea>
+    <button onclick="storeFlaw()">Send</button>
+
+    <div id="flawReveal" style="display:none;"></div>
+
+    <div class="continue-section">
+      <p class="continue-text">If you are finished with writing down everything, press the button to continue</p>
+      <button class="continue-btn" onclick="goToNext()">></button>
+    </div>
+  </div>
+
+
+  <button id="revealBtn" onclick="revealFlaws()" title="Reveal" aria-label="Reveal"></button>
+
+  <script>
+    window.onload = () => {
+      document.body.classList.add("fade-in");
+
+
+      const starfield = document.getElementById("starfield");
+      function createStars(count) {
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement("div");
+          star.className = "background-star";
+          star.style.left = Math.random() * window.innerWidth + "px";
+          star.style.top = Math.random() * window.innerHeight + "px";
+          star.style.animationDelay = `${Math.random() * 5}s`;
+          starfield.appendChild(star);
+        }
+      }
+      createStars(80);
+    };
+
+    function storeFlaw() {
+      const input = document.getElementById("flawInput").value.trim();
+      if (input) {
+        let flaws = JSON.parse(localStorage.getItem("Flaws") || "[]");
+        flaws.push(input);
+        localStorage.setItem("Flaws", JSON.stringify(flaws));
+        document.getElementById("flawInput").value = "";
+        alert("Consider it done baby.");
+      }
+    }
+
+    function revealFlaws() {
+      const flawReveal = document.getElementById("flawReveal");
+      flawReveal.innerHTML = "";
+      const flaws = JSON.parse(localStorage.getItem("Flaws") || "[]");
+      if (flaws.length === 0) {
+        alert("You haven't written anything yet.");
+        return;
+      }
+      flawReveal.style.display = "block";
+      flaws.forEach(text => {
+        const box = document.createElement("div");
+        box.className = "flaw-box";
+        box.innerText = text;
+        flawReveal.appendChild(box);
+      });
+    }
+
+    function goToNext() {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "promise.html"; 
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
